@@ -37,7 +37,7 @@ describe('Language switching', () => {
       expect(page.querySelector('.brand')?.textContent).toBe(expected.header.logo);
       expect(page.querySelector('.footer-socials a')?.textContent?.trim()).toBe(expected.contact.emailLabel);
       expect(page.querySelector('.form-feedback')?.textContent).toBe(expected.contact.form.invalid);
-      expect(page.querySelectorAll('.tech-tags')[1].textContent).toContain(expected.projects.technologies.branding);
+      expect(page.querySelectorAll('.project-badge')[1].textContent).toBe(expected.projects.filters.ui);
       expect(document.documentElement.lang).toBe(language);
       expect(document.title).toBe(`${expected.footer.title} | ${expected.footer.role}`);
       expect(document.querySelector('meta[name="description"]')?.getAttribute('content')).toBe(expected.hero.description);

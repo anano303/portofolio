@@ -8,6 +8,7 @@ export interface ProjectCardItem {
   id: string;
   category: 'web' | 'ui' | 'ecommerce';
   href?: string;
+  image?: string;
   titleKey: string;
   descriptionKey: string;
   previewClass: 'restaurant' | 'luxury' | 'shop' | 'placeholder';
