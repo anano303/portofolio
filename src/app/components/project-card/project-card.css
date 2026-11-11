@@ -118,6 +118,7 @@
 }
 
 .project-link {
+  margin-top: auto;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -129,6 +130,11 @@
   color: var(--text);
   font-weight: 700;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-unavailable {
+  margin-top: auto;
+  color: var(--muted);
 }
 
 .project-link:hover,

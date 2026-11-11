@@ -1,18 +1,27 @@
 import { CommonModule } from '@angular/common';
 import { Component, signal } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup, ReactiveFormsModule, ValidationErrors, Validators } from '@angular/forms';
+import { RouterLink } from '@angular/router';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
-import { FooterComponent } from '../../components/footer/footer';
 import { ProjectCardComponent, ProjectCardItem } from '../../components/project-card/project-card';
 import { LanguageService } from '../../core/services/language.service';
 import { TranslatePipe } from '../../shared/pipes/translate.pipe';
 
 export type ProjectFilter = 'all' | 'web' | 'ui' | 'ecommerce';
 
+function trimmedMinLength(length: number) {
+  return (control: AbstractControl): ValidationErrors | null => {
+    const value = String(control.value ?? '').trim();
+    if (!value) return { required: true };
+    return value.length < length ? { minlength: { requiredLength: length, actualLength: value.length } } : null;
+  };
+}
+
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, TranslatePipe, ProjectCardComponent],
+  imports: [CommonModule, ReactiveFormsModule, TranslatePipe, ProjectCardComponent, RouterLink],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })
@@ -32,17 +41,17 @@ export class HomeComponent {
   ];
 
   readonly skills = [
-    'HTML',
-    'CSS',
-    'SCSS',
-    'JavaScript',
-    'TypeScript',
-    'Angular',
-    'Bootstrap',
-    'Responsive Design',
-    'Figma',
-    'Git',
-    'GitHub'
+    'skills.items.0',
+    'skills.items.1',
+    'skills.items.2',
+    'skills.items.3',
+    'skills.items.4',
+    'skills.items.5',
+    'skills.items.6',
+    'skills.items.7',
+    'skills.items.8',
+    'skills.items.9',
+    'skills.items.10'
   ];
 
   readonly services = [
@@ -77,11 +86,10 @@ export class HomeComponent {
     {
       id: 'figma',
       category: 'ui',
-      href: 'https://irmazarfendeladze-cmyk.github.io/FIGMA/',
       titleKey: 'projects.figma.title',
       descriptionKey: 'projects.figma.description',
       previewClass: 'placeholder',
-      tech: ['Figma', 'UI/UX', 'Branding']
+      tech: ['Figma', 'UI/UX', 'projects.technologies.branding']
     },
     {
       id: 'marmenio2',
@@ -106,15 +114,21 @@ export class HomeComponent {
   activeFilter = signal<ProjectFilter>('all');
 
   contactForm = new FormGroup({
-    name: new FormControl('', [Validators.required, Validators.minLength(2)]),
-    email: new FormControl('', [Validators.required, Validators.email]),
-    subject: new FormControl('', [Validators.required, Validators.minLength(3)]),
-    message: new FormControl('', [Validators.required, Validators.minLength(10)])
+    name: new FormControl('', { nonNullable: true, validators: [trimmedMinLength(2)] }),
+    email: new FormControl('', { nonNullable: true, validators: [Validators.required, Validators.email] }),
+    subject: new FormControl('', { nonNullable: true, validators: [trimmedMinLength(3)] }),
+    message: new FormControl('', { nonNullable: true, validators: [trimmedMinLength(10)] })
   });
 
   formFeedback = '';
+  emailDraft = '';
 
-  constructor(readonly languageService: LanguageService) {}
+  constructor(readonly languageService: LanguageService) {
+    this.contactForm.valueChanges.pipe(takeUntilDestroyed()).subscribe(() => {
+      this.formFeedback = '';
+      this.emailDraft = '';
+    });
+  }
 
   get filteredProjects(): ProjectCardItem[] {
     return this.activeFilter() === 'all'
@@ -129,13 +143,15 @@ export class HomeComponent {
   onSubmit(): void {
     if (this.contactForm.invalid) {
       this.contactForm.markAllAsTouched();
-      this.formFeedback = this.languageService.translate('contact.form.required');
+      this.emailDraft = '';
+      this.formFeedback = 'contact.form.invalid';
       return;
     }
 
     const payload = this.contactForm.getRawValue();
-    console.info('Portfolio contact form payload', payload);
-    this.formFeedback = this.languageService.translate('contact.form.success');
-    this.contactForm.reset();
+    const body = `${this.languageService.translate('contact.form.name')}: ${payload.name.trim()}\n` +
+      `${this.languageService.translate('contact.form.email')}: ${payload.email.trim()}\n\n${payload.message.trim()}`;
+    this.emailDraft = `mailto:irma.zarf.endeladze@gmail.com?subject=${encodeURIComponent(payload.subject.trim())}&body=${encodeURIComponent(body)}`;
+    this.formFeedback = 'contact.form.success';
   }
 }

@@ -5,13 +5,13 @@
       <p class="footer-role">{{ 'footer.role' | translate }}</p>
     </div>
 
-    <nav class="footer-nav" aria-label="Footer navigation">
-      <a *ngFor="let item of navItems" [href]="item.href">{{ item.labelKey | translate }}</a>
+    <nav class="footer-nav" [attr.aria-label]="'footer.navigationLabel' | translate">
+      <a *ngFor="let item of navItems" routerLink="/" [fragment]="item.href.slice(1)">{{ item.labelKey | translate }}</a>
     </nav>
 
-    <div class="footer-socials" aria-label="Social links">
+    <div class="footer-socials" [attr.aria-label]="'footer.socialLabel' | translate">
       <a *ngFor="let link of socialLinks" [href]="link.href" target="_blank" rel="noreferrer noopener">
-        {{ link.label }}
+        {{ link.labelKey | translate }}
       </a>
     </div>
   </div>

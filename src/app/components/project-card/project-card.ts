@@ -7,7 +7,7 @@ import { TranslatePipe } from '../../shared/pipes/translate.pipe';
 export interface ProjectCardItem {
   id: string;
   category: 'web' | 'ui' | 'ecommerce';
-  href: string;
+  href?: string;
   titleKey: string;
   descriptionKey: string;
   previewClass: 'restaurant' | 'luxury' | 'shop' | 'placeholder';

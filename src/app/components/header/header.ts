@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, ElementRef, HostListener, inject } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 import { LanguageCode, LanguageService } from '../../core/services/language.service';
 import { TranslatePipe } from '../../shared/pipes/translate.pipe';
@@ -7,11 +8,12 @@ import { TranslatePipe } from '../../shared/pipes/translate.pipe';
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, TranslatePipe],
+  imports: [CommonModule, TranslatePipe, RouterLink],
   templateUrl: './header.html',
   styleUrl: './header.css'
 })
 export class HeaderComponent {
+  private readonly element: ElementRef<HTMLElement> = inject(ElementRef);
   readonly navigation = [
     { href: '#home', labelKey: 'nav.home' },
     { href: '#about', labelKey: 'nav.about' },
@@ -31,8 +33,8 @@ export class HeaderComponent {
 
   constructor(readonly languageService: LanguageService) {}
 
-  async changeLanguage(language: LanguageCode): Promise<void> {
-    await this.languageService.switchLanguage(language);
+  changeLanguage(language: LanguageCode): void {
+    this.languageService.switchLanguage(language);
     this.closeMenu();
   }
 
@@ -42,5 +44,20 @@ export class HeaderComponent {
 
   closeMenu(): void {
     this.isMenuOpen = false;
+  }
+
+  @HostListener('document:keydown.escape')
+  onEscape(): void {
+    if (this.isMenuOpen) {
+      this.closeMenu();
+      this.element.nativeElement.querySelector<HTMLButtonElement>('.nav-toggle')?.focus();
+    }
+  }
+
+  @HostListener('document:click', ['$event'])
+  onOutsideClick(event: MouseEvent): void {
+    if (!this.element.nativeElement.contains(event.target as Node)) {
+      this.closeMenu();
+    }
   }
 }
