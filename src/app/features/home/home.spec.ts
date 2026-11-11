@@ -5,12 +5,13 @@ import { HomeComponent } from './home';
 describe('Portfolio interactions', () => {
   beforeEach(() => TestBed.configureTestingModule({ imports: [HomeComponent], providers: [provideRouter([])] }));
 
-  it('filters project cards and offers no link for the unavailable project', async () => {
+  it('shows three working projects with preview images and filters the cards', async () => {
     const fixture = TestBed.createComponent(HomeComponent);
     await fixture.whenStable();
     const page = fixture.nativeElement as HTMLElement;
-    expect(page.querySelectorAll('app-project-card')).toHaveLength(4);
+    expect(page.querySelectorAll('app-project-card')).toHaveLength(3);
     expect(page.querySelectorAll('.project-link')).toHaveLength(3);
+    expect(page.querySelectorAll('.project-preview img')).toHaveLength(3);
     page.querySelectorAll<HTMLButtonElement>('.project-filters button')[3].click();
     await fixture.whenStable();
     expect(page.querySelectorAll('app-project-card')).toHaveLength(1);

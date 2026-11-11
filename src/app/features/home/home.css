@@ -99,7 +99,6 @@
 .portrait-frame img {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 5;
   height: auto;
   border-radius: 24px;
   object-fit: contain;

@@ -78,23 +78,17 @@ export class HomeComponent {
       id: 'marmenio',
       category: 'web',
       href: 'https://irmazarfendeladze-cmyk.github.io/-3/',
+      image: 'assets/images/projects/restaurant.webp',
       titleKey: 'projects.marmenio.title',
       descriptionKey: 'projects.marmenio.description',
       previewClass: 'restaurant',
       tech: ['HTML', 'CSS', 'JavaScript']
     },
     {
-      id: 'figma',
-      category: 'ui',
-      titleKey: 'projects.figma.title',
-      descriptionKey: 'projects.figma.description',
-      previewClass: 'placeholder',
-      tech: ['Figma', 'UI/UX', 'projects.technologies.branding']
-    },
-    {
       id: 'marmenio2',
       category: 'ui',
       href: 'https://irmazarfendeladze-cmyk.github.io/Figma-Marmerino-2-/',
+      image: 'assets/images/projects/marmenio.webp',
       titleKey: 'projects.marmenio2.title',
       descriptionKey: 'projects.marmenio2.description',
       previewClass: 'luxury',
@@ -104,6 +98,7 @@ export class HomeComponent {
       id: 'shop',
       category: 'ecommerce',
       href: 'https://onlineshop-ashy.vercel.app/',
+      image: 'assets/images/projects/shop.webp',
       titleKey: 'projects.shop.title',
       descriptionKey: 'projects.shop.description',
       previewClass: 'shop',

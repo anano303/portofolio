@@ -1,7 +1,8 @@
 <article class="project-card">
-  <div class="project-preview project-preview--{{ project.previewClass }}">
+  <div class="project-preview project-preview--{{ project.previewClass }}" [class.has-image]="project.image">
+    <img *ngIf="project.image" [src]="project.image" [alt]="project.titleKey | translate" width="1440" height="900" loading="lazy" decoding="async" />
     <span class="project-badge">{{ getCategoryLabel() }}</span>
-    <div class="preview-label">
+    <div *ngIf="!project.image" class="preview-label">
       <span>{{ project.titleKey | translate }}</span>
     </div>
   </div>
