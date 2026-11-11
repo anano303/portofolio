@@ -95,6 +95,10 @@
       "title": "MARMENIO",
       "description": "A jewelry and lifestyle landing page focused on luxury product storytelling and premium visual identity."
     },
+    "trainTicket": {
+      "title": "TRAIN TICKETS",
+      "description": "A train ticket search and trip planning website with route and departure date selection."
+    },
     "shop": {
       "title": "ONLINE SHOP",
       "description": "Responsive e-commerce storefront with catalog browsing, search, and cart interactions."

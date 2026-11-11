@@ -95,6 +95,10 @@
       "title": "MARMENIO",
       "description": "Una pagina di presentazione dedicata ai gioielli e allo stile di vita, che racconta i prodotti di alta gamma e l'identità visiva del marchio."
     },
+    "trainTicket": {
+      "title": "BIGLIETTI DEL TRENO",
+      "description": "Un sito per cercare biglietti del treno e pianificare viaggi, scegliendo la tratta e la data di partenza."
+    },
     "shop": {
       "title": "NEGOZIO ONLINE",
       "description": "Negozio online che si adatta a ogni schermo, con catalogo, ricerca e possibilità di aggiungere prodotti al carrello."
