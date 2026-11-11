@@ -1,6 +1,8 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { firstValueFrom } from 'rxjs';
+import { Injectable, signal } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
+import ka from '../../../assets/i18n/ka.json';
+import en from '../../../assets/i18n/en.json';
+import it from '../../../assets/i18n/it.json';
 
 export type LanguageCode = 'ka' | 'en' | 'it';
 
@@ -10,50 +12,62 @@ export type LanguageCode = 'ka' | 'en' | 'it';
 export class LanguageService {
   private readonly supportedLanguages: LanguageCode[] = ['ka', 'en', 'it'];
   private readonly storageKey = 'irma-language';
-  private translations: Record<string, unknown> = {};
-  private currentLanguageValue: LanguageCode = 'ka';
+  private readonly dictionaries: Record<LanguageCode, Record<string, unknown>> = { ka, en, it };
+  private readonly translations = signal<Record<string, unknown>>(ka);
+  private readonly currentLanguageValue = signal<LanguageCode>('ka');
 
-  constructor(private readonly http: HttpClient) {
+  constructor(
+    private readonly title: Title,
+    private readonly meta: Meta
+  ) {
     this.initializeLanguage();
   }
 
   get currentLanguage(): LanguageCode {
-    return this.currentLanguageValue;
+    return this.currentLanguageValue();
   }
 
-  async initializeLanguage(): Promise<void> {
+  initializeLanguage(): void {
     const savedLanguage = this.getStoredLanguage();
     const languageToLoad = savedLanguage ?? 'ka';
-    await this.loadLanguage(languageToLoad, false);
+    this.loadLanguage(languageToLoad, false);
   }
 
-  async switchLanguage(language: LanguageCode): Promise<void> {
-    await this.loadLanguage(language, true);
+  switchLanguage(language: LanguageCode): void {
+    this.loadLanguage(language, true);
   }
 
   translate(key: string): string {
-    const value = this.resolvePath(this.translations, key);
+    const value = this.resolvePath(this.translations(), key);
     return typeof value === 'string' ? value : key;
   }
 
-  private async loadLanguage(language: LanguageCode, persist: boolean): Promise<void> {
-    const fileUrl = `assets/i18n/${language}.json`;
-    const data = await firstValueFrom(this.http.get<Record<string, unknown>>(fileUrl));
-    this.translations = data ?? {};
-    this.currentLanguageValue = language;
+  private loadLanguage(language: LanguageCode, persist: boolean): void {
+    this.translations.set(this.dictionaries[language]);
+    this.currentLanguageValue.set(language);
 
     if (persist) {
-      localStorage.setItem(this.storageKey, language);
+      try {
+        localStorage.setItem(this.storageKey, language);
+      } catch {
+        // Language switching still works when the browser blocks storage.
+      }
     }
 
     document.documentElement.lang = language;
+    this.title.setTitle(`${this.translate('footer.title')} | ${this.translate('footer.role')}`);
+    this.meta.updateTag({ name: 'description', content: this.translate('hero.description') });
   }
 
   private getStoredLanguage(): LanguageCode | null {
-    const value = localStorage.getItem(this.storageKey);
-    return value && this.supportedLanguages.includes(value as LanguageCode)
-      ? (value as LanguageCode)
-      : null;
+    try {
+      const value = localStorage.getItem(this.storageKey);
+      return value && this.supportedLanguages.includes(value as LanguageCode)
+        ? (value as LanguageCode)
+        : null;
+    } catch {
+      return null;
+    }
   }
 
   private resolvePath(source: Record<string, unknown>, path: string): unknown {

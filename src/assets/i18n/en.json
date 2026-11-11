@@ -1,15 +1,21 @@
-﻿{
+{
   "nav": {
     "home": "Home",
     "about": "About",
     "services": "Services",
     "skills": "Skills",
     "projects": "My Projects",
-    "contact": "Contact"
+    "contact": "Contact",
+    "mainLabel": "Main navigation"
   },
   "header": {
     "logo": "IRMA",
-    "cv": "Download CV"
+    "cv": "Download CV",
+    "cvUnavailable": "CV coming soon",
+    "homeLabel": "Irma's home page",
+    "openMenu": "Open navigation menu",
+    "closeMenu": "Close navigation menu",
+    "languageLabel": "Choose language"
   },
   "hero": {
     "title": "HELLO, I'M IRMA ENDELADZE",
@@ -17,7 +23,8 @@
     "subtitle": "Angular Intern — IT Academy STEP",
     "description": "Creating modern, responsive, and user-friendly web experiences.",
     "primaryButton": "View My Projects",
-    "secondaryButton": "Contact Me"
+    "secondaryButton": "Contact Me",
+    "portraitAlt": "Portrait of Irma Endeladze"
   },
   "about": {
     "title": "More About Me",
@@ -58,8 +65,8 @@
     ]
   },
   "stats": {
-    "years": "2+ Years of Learning & Development",
-    "projects": "10+ Projects"
+    "years": "Years of Learning & Development",
+    "projects": "Projects"
   },
   "projects": {
     "title": "My Projects",
@@ -69,15 +76,20 @@
       "ui": "UI/UX Design",
       "ecommerce": "E-commerce"
     },
+    "filtersLabel": "Project filters",
+    "techLabel": "Technologies used",
+    "technologies": {
+      "branding": "Branding"
+    },
     "viewLive": "Live Demo",
     "placeholder": "Preview unavailable",
     "marmenio": {
       "title": "MARMENIO",
-      "description": "Luxury brand experience with a refined product catalog and elegant editorial layout."
+      "description": "A restaurant menu website with clearly organized dishes and a responsive layout."
     },
     "figma": {
       "title": "FIGMA",
-      "description": "Placeholder project card for a Figma-backed concept that is currently unavailable for live inspection."
+      "description": "A design concept created in Figma. The live version is currently unavailable."
     },
     "marmenio2": {
       "title": "FIGMA MARMERINO 2",
@@ -99,17 +111,24 @@
       "email": "Email",
       "subject": "Subject",
       "message": "Message",
-      "submit": "Send Message",
-      "success": "Your message has been prepared for submission. Connect a backend or email service to enable real sending.",
-      "info": "This frontend-only contact form validates entries and is ready to connect to a backend or email API.",
+      "submit": "Prepare email",
+      "success": "Your draft is ready. Open your email app to review and send it.",
+      "info": "Prepare your message here, then review and send it using your email app.",
+      "invalid": "Please check the highlighted fields.",
+      "openEmail": "Open email app",
       "required": "This field is required.",
       "emailInvalid": "Please enter a valid email address.",
-      "minLength": "Please enter at least 3 characters."
+      "minLength": "Please enter at least 3 characters.",
+      "nameMinLength": "Name must be at least 2 characters.",
+      "subjectMinLength": "Subject must be at least 3 characters.",
+      "messageMinLength": "Message must be at least 10 characters."
     }
   },
   "footer": {
     "title": "Irma Endeladze",
     "role": "Frontend Developer",
+    "navigationLabel": "Footer navigation",
+    "socialLabel": "Social links",
     "copyright": "© {year} Irma Endeladze. All rights reserved."
   }
 }

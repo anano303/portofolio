@@ -1,31 +1,38 @@
-﻿{
+{
   "nav": {
-    "home": "Home",
+    "home": "Inizio",
     "about": "Chi sono",
     "services": "Servizi",
     "skills": "Competenze",
     "projects": "Progetti",
-    "contact": "Contatti"
+    "contact": "Contatti",
+    "mainLabel": "Navigazione principale"
   },
   "header": {
     "logo": "IRMA",
-    "cv": "Scarica CV"
+    "cv": "Scarica CV",
+    "cvUnavailable": "CV in arrivo",
+    "homeLabel": "Pagina iniziale di Irma",
+    "openMenu": "Apri il menu di navigazione",
+    "closeMenu": "Chiudi il menu di navigazione",
+    "languageLabel": "Seleziona la lingua"
   },
   "hero": {
     "title": "CIAO, SONO IRMA ENDELADZE",
-    "role": "SVILUPPATORE FRONTEND",
-    "subtitle": "Angular Intern — IT Academy STEP",
+    "role": "SVILUPPATRICE FRONTEND",
+    "subtitle": "Stagista Angular — IT Academy STEP",
     "description": "Creo esperienze web moderne, responsive e facili da usare.",
     "primaryButton": "Guarda i progetti",
-    "secondaryButton": "Contattami"
+    "secondaryButton": "Contattami",
+    "portraitAlt": "Ritratto di Irma Endeladze"
   },
   "about": {
     "title": "Di più su di me",
-    "intro": "Sono una Frontend Developer appassionata con oltre due anni di apprendimento, pratica e sviluppo continuo. Lavoro su progetti freelance mentre sviluppo le mie competenze Angular come stagista presso IT Academy STEP. Il mio obiettivo è crescere professionalmente, creare applicazioni moderne e accessibili e progettare esperienze intuitive.",
+    "intro": "Sono una sviluppatrice frontend appassionata con oltre due anni di apprendimento, pratica e sviluppo continuo. Lavoro su progetti come libera professionista mentre sviluppo le mie competenze Angular come stagista presso IT Academy STEP. Il mio obiettivo è crescere professionalmente, creare applicazioni moderne e accessibili e progettare esperienze intuitive.",
     "items": [
       "Oltre 2 anni di apprendimento e sviluppo pratico.",
-      "Sviluppo web freelance.",
-      "Angular Intern presso IT Academy STEP.",
+      "Sviluppo web come libera professionista.",
+      "Stagista Angular presso IT Academy STEP.",
       "Apprendimento continuo e crescita professionale.",
       "Interesse per le tecnologie frontend moderne e UI/UX."
     ]
@@ -51,41 +58,46 @@
       "TypeScript",
       "Angular",
       "Bootstrap",
-      "Responsive Design",
+      "Design adattivo",
       "Figma",
       "Git",
       "GitHub"
     ]
   },
   "stats": {
-    "years": "2+ anni di apprendimento e sviluppo",
-    "projects": "10+ progetti"
+    "years": "Anni di apprendimento e sviluppo",
+    "projects": "Progetti"
   },
   "projects": {
     "title": "I miei progetti",
     "filters": {
       "all": "Tutti",
       "web": "Sviluppo web",
-      "ui": "UI/UX Design",
-      "ecommerce": "E-commerce"
+      "ui": "Design UI/UX",
+      "ecommerce": "Commercio elettronico"
     },
-    "viewLive": "Anteprima live",
+    "filtersLabel": "Filtri dei progetti",
+    "techLabel": "Tecnologie utilizzate",
+    "technologies": {
+      "branding": "Identità del marchio"
+    },
+    "viewLive": "Visita il sito",
     "placeholder": "Anteprima non disponibile",
     "marmenio": {
       "title": "MARMENIO",
-      "description": "Esperienza di brand premium con catalogo di prodotti raffinato e layout editoriale elegante."
+      "description": "Un sito per il menu di un ristorante, con piatti ben organizzati e un design adatto a ogni schermo."
     },
     "figma": {
       "title": "FIGMA",
-      "description": "Scheda placeholder per un concept basato su Figma attualmente non disponibile per ispezione live."
+      "description": "Progetto basato su un'idea sviluppata in Figma, la cui versione funzionante non è attualmente disponibile."
     },
     "marmenio2": {
       "title": "FIGMA MARMERINO 2",
-      "description": "Una landing page di gioielli e lifestyle dedicata alla narrazione premium dei prodotti."
+      "description": "Una pagina di presentazione dedicata ai gioielli e allo stile di vita, che racconta i prodotti di alta gamma e l'identità visiva del marchio."
     },
     "shop": {
-      "title": "ONLINE SHOP",
-      "description": "Store e-commerce responsive con catalogo, ricerca e interazioni con il carrello."
+      "title": "NEGOZIO ONLINE",
+      "description": "Negozio online che si adatta a ogni schermo, con catalogo, ricerca e possibilità di aggiungere prodotti al carrello."
     }
   },
   "contact": {
@@ -99,17 +111,24 @@
       "email": "Email",
       "subject": "Oggetto",
       "message": "Messaggio",
-      "submit": "Invia messaggio",
-      "success": "Il tuo messaggio è pronto per essere inviato. Collega un backend o un servizio email per attivare l'invio reale.",
-      "info": "Questo modulo frontend valida le informazioni e può essere collegato a un backend o a un'API email.",
+      "submit": "Prepara email",
+      "success": "La bozza è pronta. Apri la tua app di posta per controllarla e inviarla.",
+      "info": "Prepara il messaggio, poi controllalo e invialo dalla tua app di posta.",
+      "invalid": "Controlla i campi evidenziati.",
+      "openEmail": "Apri l'app di posta",
       "required": "Questo campo è obbligatorio.",
       "emailInvalid": "Inserisci un indirizzo email valido.",
-      "minLength": "Inserisci almeno 3 caratteri."
+      "minLength": "Inserisci almeno 3 caratteri.",
+      "nameMinLength": "Il nome deve contenere almeno 2 caratteri.",
+      "subjectMinLength": "L'oggetto deve contenere almeno 3 caratteri.",
+      "messageMinLength": "Il messaggio deve contenere almeno 10 caratteri."
     }
   },
   "footer": {
     "title": "Irma Endeladze",
-    "role": "Frontend Developer",
+    "role": "Sviluppatrice frontend",
+    "navigationLabel": "Navigazione a piè di pagina",
+    "socialLabel": "Link social",
     "copyright": "© {year} Irma Endeladze. Tutti i diritti riservati."
   }
 }

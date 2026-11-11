@@ -10,12 +10,15 @@
     <h3>{{ project.titleKey | translate }}</h3>
     <p>{{ project.descriptionKey | translate }}</p>
 
-    <ul class="tech-tags" aria-label="Technology stack">
-      <li *ngFor="let item of project.tech">{{ item }}</li>
+    <ul class="tech-tags" [attr.aria-label]="'projects.techLabel' | translate">
+      <li *ngFor="let item of project.tech">{{ item | translate }}</li>
     </ul>
 
-    <a class="project-link" [href]="project.href" target="_blank" rel="noreferrer noopener">
+    <a *ngIf="project.href; else unavailable" class="project-link" [href]="project.href" target="_blank" rel="noreferrer noopener">
       {{ 'projects.viewLive' | translate }}
     </a>
+    <ng-template #unavailable>
+      <span class="project-unavailable">{{ 'projects.placeholder' | translate }}</span>
+    </ng-template>
   </div>
 </article>
