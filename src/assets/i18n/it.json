@@ -1,0 +1,115 @@
+﻿{
+  "nav": {
+    "home": "Home",
+    "about": "Chi sono",
+    "services": "Servizi",
+    "skills": "Competenze",
+    "projects": "Progetti",
+    "contact": "Contatti"
+  },
+  "header": {
+    "logo": "IRMA",
+    "cv": "Scarica CV"
+  },
+  "hero": {
+    "title": "CIAO, SONO IRMA ENDELADZE",
+    "role": "SVILUPPATORE FRONTEND",
+    "subtitle": "Angular Intern — IT Academy STEP",
+    "description": "Creo esperienze web moderne, responsive e facili da usare.",
+    "primaryButton": "Guarda i progetti",
+    "secondaryButton": "Contattami"
+  },
+  "about": {
+    "title": "Di più su di me",
+    "intro": "Sono una Frontend Developer appassionata con oltre due anni di apprendimento, pratica e sviluppo continuo. Lavoro su progetti freelance mentre sviluppo le mie competenze Angular come stagista presso IT Academy STEP. Il mio obiettivo è crescere professionalmente, creare applicazioni moderne e accessibili e progettare esperienze intuitive.",
+    "items": [
+      "Oltre 2 anni di apprendimento e sviluppo pratico.",
+      "Sviluppo web freelance.",
+      "Angular Intern presso IT Academy STEP.",
+      "Apprendimento continuo e crescita professionale.",
+      "Interesse per le tecnologie frontend moderne e UI/UX."
+    ]
+  },
+  "services": {
+    "title": "Servizi",
+    "frontend": {
+      "title": "Sviluppo Frontend",
+      "description": "Interfacce web moderne, funzionali e facili da usare."
+    },
+    "responsive": {
+      "title": "Sviluppo di siti responsive",
+      "description": "Siti web che si adattano perfettamente a desktop, tablet e dispositivi mobili."
+    }
+  },
+  "skills": {
+    "title": "Competenze",
+    "items": [
+      "HTML",
+      "CSS",
+      "SCSS",
+      "JavaScript",
+      "TypeScript",
+      "Angular",
+      "Bootstrap",
+      "Responsive Design",
+      "Figma",
+      "Git",
+      "GitHub"
+    ]
+  },
+  "stats": {
+    "years": "2+ anni di apprendimento e sviluppo",
+    "projects": "10+ progetti"
+  },
+  "projects": {
+    "title": "I miei progetti",
+    "filters": {
+      "all": "Tutti",
+      "web": "Sviluppo web",
+      "ui": "UI/UX Design",
+      "ecommerce": "E-commerce"
+    },
+    "viewLive": "Anteprima live",
+    "placeholder": "Anteprima non disponibile",
+    "marmenio": {
+      "title": "MARMENIO",
+      "description": "Esperienza di brand premium con catalogo di prodotti raffinato e layout editoriale elegante."
+    },
+    "figma": {
+      "title": "FIGMA",
+      "description": "Scheda placeholder per un concept basato su Figma attualmente non disponibile per ispezione live."
+    },
+    "marmenio2": {
+      "title": "FIGMA MARMERINO 2",
+      "description": "Una landing page di gioielli e lifestyle dedicata alla narrazione premium dei prodotti."
+    },
+    "shop": {
+      "title": "ONLINE SHOP",
+      "description": "Store e-commerce responsive con catalogo, ricerca e interazioni con il carrello."
+    }
+  },
+  "contact": {
+    "title": "Contatti",
+    "description": "Costruiamo qualcosa di moderno e orientato all'utente insieme.",
+    "emailLabel": "Email",
+    "githubLabel": "GitHub",
+    "whatsappLabel": "WhatsApp",
+    "form": {
+      "name": "Nome",
+      "email": "Email",
+      "subject": "Oggetto",
+      "message": "Messaggio",
+      "submit": "Invia messaggio",
+      "success": "Il tuo messaggio è pronto per essere inviato. Collega un backend o un servizio email per attivare l'invio reale.",
+      "info": "Questo modulo frontend valida le informazioni e può essere collegato a un backend o a un'API email.",
+      "required": "Questo campo è obbligatorio.",
+      "emailInvalid": "Inserisci un indirizzo email valido.",
+      "minLength": "Inserisci almeno 3 caratteri."
+    }
+  },
+  "footer": {
+    "title": "Irma Endeladze",
+    "role": "Frontend Developer",
+    "copyright": "© {year} Irma Endeladze. Tutti i diritti riservati."
+  }
+}

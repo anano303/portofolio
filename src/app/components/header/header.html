@@ -1,0 +1,46 @@
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="#home" aria-label="Irma home">{{ 'header.logo' | translate }}</a>
+
+    <button
+      class="nav-toggle"
+      type="button"
+      aria-label="Toggle navigation"
+      [attr.aria-expanded]="isMenuOpen"
+      (click)="toggleMenu()"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="site-nav" [class.is-open]="isMenuOpen" aria-label="Main navigation">
+      <div class="nav-links">
+        <a
+          *ngFor="let item of navigation"
+          [href]="item.href"
+          (click)="closeMenu()"
+        >
+          {{ item.labelKey | translate }}
+        </a>
+      </div>
+
+      <div class="nav-controls">
+        <div class="language-switcher" aria-label="Language switcher">
+          <button
+            *ngFor="let option of languageOptions"
+            type="button"
+            [class.is-active]="languageService.currentLanguage === option.code"
+            (click)="changeLanguage(option.code)"
+          >
+            {{ option.label }}
+          </button>
+        </div>
+
+        <a class="download-button" href="assets/files/Irma-Endeladze-CV.pdf" download>
+          {{ 'header.cv' | translate }}
+        </a>
+      </div>
+    </nav>
+  </div>
+</header>

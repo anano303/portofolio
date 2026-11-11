@@ -1,0 +1,164 @@
+<section id="home" class="hero-section">
+  <div class="container hero-layout">
+    <div class="hero-copy">
+      <p class="eyebrow">{{ 'hero.subtitle' | translate }}</p>
+      <h1>{{ 'hero.title' | translate }}</h1>
+      <h2>{{ 'hero.role' | translate }}</h2>
+      <p class="hero-description">{{ 'hero.description' | translate }}</p>
+
+      <div class="hero-actions">
+        <a class="primary-button" href="#projects">{{ 'hero.primaryButton' | translate }}</a>
+        <a class="secondary-button" href="#contact">{{ 'hero.secondaryButton' | translate }}</a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="portrait-frame">
+        <img [src]="profileImage" alt="Portrait placeholder for Irma Endeladze" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="content-section">
+  <div class="container section-header">
+    <p class="eyebrow">{{ 'nav.about' | translate }}</p>
+    <h2>{{ 'about.title' | translate }}</h2>
+  </div>
+
+  <div class="container about-grid">
+    <div class="about-copy">
+      <p>{{ 'about.intro' | translate }}</p>
+    </div>
+
+    <div class="about-list">
+      <div *ngFor="let item of aboutItems" class="about-item">
+        <span class="item-dot"></span>
+        <span>{{ item | translate }}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="content-section alt-panel">
+  <div class="container section-header">
+    <p class="eyebrow">{{ 'nav.services' | translate }}</p>
+    <h2>{{ 'services.title' | translate }}</h2>
+  </div>
+
+  <div class="container service-grid">
+    <article *ngFor="let service of services" class="service-card">
+      <div class="service-icon">✦</div>
+      <h3>{{ service.titleKey | translate }}</h3>
+      <p>{{ service.descriptionKey | translate }}</p>
+    </article>
+  </div>
+</section>
+
+<section id="skills" class="content-section">
+  <div class="container section-header">
+    <p class="eyebrow">{{ 'nav.skills' | translate }}</p>
+    <h2>{{ 'skills.title' | translate }}</h2>
+  </div>
+
+  <div class="container skill-grid">
+    <div *ngFor="let skill of skills" class="skill-card">
+      <span>{{ skill }}</span>
+    </div>
+  </div>
+</section>
+
+<section class="stats-section">
+  <div class="container stats-grid">
+    <div *ngFor="let stat of stats" class="stat-item">
+      <strong>{{ stat.value }}</strong>
+      <span>{{ stat.labelKey | translate }}</span>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="content-section projects-section">
+  <div class="container section-header projects-header">
+    <div>
+      <p class="eyebrow">{{ 'nav.projects' | translate }}</p>
+      <h2>{{ 'projects.title' | translate }}</h2>
+    </div>
+
+    <div class="project-filters" aria-label="Project filters">
+      <button
+        *ngFor="let filter of projectFilters"
+        type="button"
+        [class.is-active]="activeFilter() === filter.value"
+        (click)="setFilter(filter.value)"
+      >
+        {{ filter.labelKey | translate }}
+      </button>
+    </div>
+  </div>
+
+  <div class="container project-grid">
+    <app-project-card *ngFor="let project of filteredProjects" [project]="project"></app-project-card>
+  </div>
+</section>
+
+<section id="contact" class="content-section contact-section">
+  <div class="container section-header">
+    <p class="eyebrow">{{ 'nav.contact' | translate }}</p>
+    <h2>{{ 'contact.title' | translate }}</h2>
+  </div>
+
+  <div class="container contact-layout">
+    <div class="contact-panel">
+      <p class="contact-intro">{{ 'contact.description' | translate }}</p>
+
+      <div class="contact-list">
+        <a href="mailto:irma.zarf.endeladze@gmail.com">{{ 'contact.emailLabel' | translate }}: irma.zarf.endeladze@gmail.com</a>
+        <a href="https://github.com/irmazarfendeladze-cmyk" target="_blank" rel="noreferrer noopener">{{ 'contact.githubLabel' | translate }}: irmazarfendeladze-cmyk</a>
+        <a href="https://wa.me/393889817989" target="_blank" rel="noreferrer noopener">{{ 'contact.whatsappLabel' | translate }}: +393889817989</a>
+      </div>
+    </div>
+
+    <form class="contact-form" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+      <label>
+        <span>{{ 'contact.form.name' | translate }}</span>
+        <input type="text" formControlName="name" placeholder="{{ 'contact.form.name' | translate }}" />
+        <small *ngIf="contactForm.get('name')?.touched && contactForm.get('name')?.hasError('required')">
+          {{ 'contact.form.required' | translate }}
+        </small>
+      </label>
+
+      <label>
+        <span>{{ 'contact.form.email' | translate }}</span>
+        <input type="email" formControlName="email" placeholder="{{ 'contact.form.email' | translate }}" />
+        <small *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.hasError('required')">
+          {{ 'contact.form.required' | translate }}
+        </small>
+        <small *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.hasError('email')">
+          {{ 'contact.form.emailInvalid' | translate }}
+        </small>
+      </label>
+
+      <label>
+        <span>{{ 'contact.form.subject' | translate }}</span>
+        <input type="text" formControlName="subject" placeholder="{{ 'contact.form.subject' | translate }}" />
+        <small *ngIf="contactForm.get('subject')?.touched && contactForm.get('subject')?.hasError('required')">
+          {{ 'contact.form.required' | translate }}
+        </small>
+      </label>
+
+      <label>
+        <span>{{ 'contact.form.message' | translate }}</span>
+        <textarea formControlName="message" rows="5" placeholder="{{ 'contact.form.message' | translate }}"></textarea>
+        <small *ngIf="contactForm.get('message')?.touched && contactForm.get('message')?.hasError('required')">
+          {{ 'contact.form.required' | translate }}
+        </small>
+      </label>
+
+      <div class="form-meta">
+        <p>{{ 'contact.form.info' | translate }}</p>
+        <button class="primary-button" type="submit">{{ 'contact.form.submit' | translate }}</button>
+        <small *ngIf="formFeedback" class="form-feedback">{{ formFeedback }}</small>
+      </div>
+    </form>
+  </div>
+</section>

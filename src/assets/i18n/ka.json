@@ -1,0 +1,115 @@
+﻿{
+  "nav": {
+    "home": "მთავარი",
+    "about": "ჩემ შესახებ",
+    "services": "სერვისები",
+    "skills": "ჩვევები",
+    "projects": "პროექტები",
+    "contact": "კონტაქტი"
+  },
+  "header": {
+    "logo": "IRMA",
+    "cv": "CV-ის ჩამოტვირთვა"
+  },
+  "hero": {
+    "title": "გამარჯობა, მე ვარ ირმა ენდელაძე",
+    "role": "ფრონტენდ დეველოპერი",
+    "subtitle": "Angular Intern — IT Academy STEP",
+    "description": "თანამედროვე, responsive და მომხმარებლისთვის მოსახერხებელი ვებ გამოცდილების შექმნა.",
+    "primaryButton": "პროექტების ნახვა",
+    "secondaryButton": "დამიკავშირდი"
+  },
+  "about": {
+    "title": "ჩემ შესახებ",
+    "intro": "მე ვარ ენთუზიაზმით გამსჭვალული Frontend Developer, რომელმაც ორი წელზე მეტი დრო გაატარა სწავლასა და პრაქტიკაში. ვმუშაობ freelance პროექტებზე და Angular-ის უნარების განვითარებას ვახორციელებ IT Academy STEP-ის სტაჟიორként. ჩემი მიზანია პროფესიულად ვითარდე, შევქმნა თანამედროვე და ხელმისაწვდომი ვებ־აპლიკაციები და მომხმარებლისთვის ინტუიციურად მოსახერხებელი გამოცდილება.",
+    "items": [
+      "2+ წელი სწავლა და პრაქტიკული განვითარება.",
+      "Freelance ვებ განვითარება.",
+      "Angular Intern — IT Academy STEP.",
+      "გაგრძელებული სწავლა და პროფესიული ზრდა.",
+      "ინტერესია თანამედროვე frontend ტექნოლოგიები და UI/UX."
+    ]
+  },
+  "services": {
+    "title": "სერვისები",
+    "frontend": {
+      "title": "ფრონტენდ დეველოპმენტი",
+      "description": "თანამედროვე, ფუნქციური და მომხმარებლისთვის მოსახერხებელი ვებ‑ინტერფეისების შექმნა."
+    },
+    "responsive": {
+      "title": "Responsive ვებსაიტების განვითარება",
+      "description": "საიტები, რომლებიც სრულყოფილად ერგება desktop, tablet და mobile მოწყობილობებს."
+    }
+  },
+  "skills": {
+    "title": "ჩვევები",
+    "items": [
+      "HTML",
+      "CSS",
+      "SCSS",
+      "JavaScript",
+      "TypeScript",
+      "Angular",
+      "Bootstrap",
+      "Responsive Design",
+      "Figma",
+      "Git",
+      "GitHub"
+    ]
+  },
+  "stats": {
+    "years": "2+ წელი სწავლა და განვითარება",
+    "projects": "10+ პროექტი"
+  },
+  "projects": {
+    "title": "ჩემი პროექტები",
+    "filters": {
+      "all": "ყველა",
+      "web": "ვებ განვითარება",
+      "ui": "UI/UX Design",
+      "ecommerce": "E-commerce"
+    },
+    "viewLive": "Live Demo",
+    "placeholder": "Preview unavailable",
+    "marmenio": {
+      "title": "MARMENIO",
+      "description": "ლუქსის ბრენდული გამოცდილება, დახვეწილი პროდუქციის კატალოგით და ელეგანტური ედიტორული დიზაინით."
+    },
+    "figma": {
+      "title": "FIGMA",
+      "description": "Placeholder პროექტი Figma-ცენტრირებული კონცეფციისთვის, რომელიც ამჟამად არ არის ხელმისაწვდომი live მონაცემების სანახავად."
+    },
+    "marmenio2": {
+      "title": "FIGMA MARMERINO 2",
+      "description": "სამკაულებისა და lifestyle ლენდინგის გვერდი, რომელიც ყურადღებას აქცევს პრემიუმ პროდუქტის ისტორიასა და მაღალი ხარისხის ვიზუალურ იდენტობას."
+    },
+    "shop": {
+      "title": "ONLINE SHOP",
+      "description": "Responsive E-commerce storefront, რომლის საშუალებითაც შესაძლებელია კატალოგის დათვალიერება, ძიება და კალათაში დამატება."
+    }
+  },
+  "contact": {
+    "title": "კონტაქტი",
+    "description": "მოდით ერთად შევქმნათ თანამედროვე და მომხმარებლისთვის მოსახერხებელი გამოცდილება.",
+    "emailLabel": "ელ-ფოსტა",
+    "githubLabel": "GitHub",
+    "whatsappLabel": "WhatsApp",
+    "form": {
+      "name": "სახელი",
+      "email": "ელ-ფოსტა",
+      "subject": "სათაური",
+      "message": "შეტყობინება",
+      "submit": "გაგზავნა",
+      "success": "თქვენი შეტყობინება მოემზადება გაგზავნისთვის. დაუკავშირდით backend-ს ან email service-ს, რათა რეალურად გაიგზავნოს.",
+      "info": "ეს frontend-only ფორმა ამოწმებს შეყვანილ მონაცემებს და მზადაა backend ან email API-თან დაკავშირებისთვის.",
+      "required": "ეს ველი აუცილებელია.",
+      "emailInvalid": "გთხოვთ შეიყვანოთ სწორი ელ-ფოსტის მისამართი.",
+      "minLength": "გთხოვთ შეიყვანოთ მინიმუმ 3 სიმბოლო."
+    }
+  },
+  "footer": {
+    "title": "Irma Endeladze",
+    "role": "Frontend Developer",
+    "copyright": "© {year} Irma Endeladze. ყველა უფლება დაცულია."
+  }
+}

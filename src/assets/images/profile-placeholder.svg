@@ -1,0 +1,16 @@
+<svg width="720" height="820" viewBox="0 0 720 820" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="720" height="820" rx="32" fill="url(#paint0_linear_1_2)"/>
+  <circle cx="360" cy="230" r="118" fill="rgba(136, 229, 255, 0.9)"/>
+  <path d="M240 660C240 581.5 302.5 520 381 520H431C509.5 520 572 581.5 572 660V690H240V660Z" fill="rgba(12, 30, 42, 0.88)"/>
+  <path d="M286 278C286 206.7 343.7 148 415 148H450C521.3 148 579 206.7 579 278V328C579 399.3 521.3 457 450 457H415C343.7 457 286 399.3 286 328V278Z" fill="rgba(12, 30, 42, 0.88)"/>
+  <text x="360" y="390" text-anchor="middle" fill="#E8F9FF" font-size="92" font-family="Arial, sans-serif" font-weight="700">IE</text>
+  <rect x="104" y="708" width="512" height="54" rx="15" fill="rgba(255,255,255,0.12)"/>
+  <text x="360" y="746" text-anchor="middle" fill="#E8F9FF" font-size="26" font-family="Arial, sans-serif">Portrait placeholder</text>
+  <defs>
+    <linearGradient id="paint0_linear_1_2" x1="37" y1="38" x2="666" y2="785" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0C1E2A"/>
+      <stop offset="0.5" stop-color="#102A3B"/>
+      <stop offset="1" stop-color="#0B1722"/>
+    </linearGradient>
+  </defs>
+</svg>
